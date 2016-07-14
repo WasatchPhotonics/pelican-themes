@@ -142,6 +142,42 @@
                         </li>
                     {% endfor %}
                 {% endif %}
+                <!-- ugly handwritten section to support matching
+                    wasatchphotonics.com links
+                -->
+                <style>
+                    .top_bar_link {
+                        color: #ff0000;
+                    }
+                </style>
+
+                <li>
+                    <a class="top_bar_link" href="http://wasatchphotonics.com/custom-and-oem-gratings">
+                        Request A Quote
+                    </a>
+                </li>
+                <li>
+                    <a href="http://wasatchphotonics.com/applications-photo-album">
+                        Support
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="http://wasatchphotonics.com/locations-travel-information">
+                        Contact Us
+                    </a>
+                </li>
+                <li>
+                    <a href="http://wasatchphotonics.com/my-account">
+                        Login/Register
+                    </a>
+                </li>
+                <li>
+                    <a href="http://wasatchphotonics.com/cart">
+                        Cart
+                    </a>
+				</li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
             {% if 'tipue_search' in PLUGINS %}
@@ -158,12 +194,45 @@
     </div>
 </div> <!-- /.navbar -->
 <!-- Banner -->
-{% if BANNER and BANNER_ALL_PAGES %}
-    {% include 'includes/banner.html' %}
-{% elif BANNER and not BANNER_ALL_PAGES %}
-    {% block banner %}{% endblock %}
-{% endif %}
-<!-- End Banner -->
+<style>
+	#wasatch_banner{
+	    background-color: #28282e;
+        padding:20px;
+	}
+    .title_location {
+        color: #fff;
+    }
+    .phone_green {
+        color: #3d996b;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+</style>
+
+<div id="wasatch_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <img src="/images/wasatch_logo_rev_main.png"></img>
+            </div>
+            <div class="col-xs-2 col-xs-offset-7">
+                <div class="container">
+                    <div class="row" style="padding-top:20px">
+                        <div class="col-xs-4 title_location">
+                            GRATINGS <span class="phone_green">435.752.4301</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 title_location">
+                            SYSTEMS <span class="phone_green">919.544.7785</span>
+                        </div>
+                    </div>
+                </div><!-- container -->
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- wasatch banner --><!-- End Banner -->
+
 <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
     <div class="row">
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
